@@ -2,5 +2,50 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
+    background-color: #242424;
+}
+.head-container{
+    background-color: #1DB954;
+    height: 55px;
+    border: 1px solid #1DB954;
+    padding-left: 1%;
+    font-weight: bolder;
+    font-size: 20px;
+    color:  #242424;
+}
+
+footer{
+    background-color: #1DB954;
+    position: absolute;
+    bottom: 0;
+    height: 25px;
+    width: 100%;
+}
+
+.cards-screen{
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 30px;
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+
+.card{
+    border: 2px solid #306342;
+    border-radius: 6px;
+    margin-right: 93px;
+    margin-bottom: 20px;
+}
+
+.card-text{
+    margin-left: 10px;
+}
+
+.card-pic{
+    width: 300px;
+    height: 300px;
+
 }

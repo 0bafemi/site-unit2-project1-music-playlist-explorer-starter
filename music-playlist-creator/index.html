@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Music Playlist Explorer</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,97 +18,39 @@
         </div>
     </header>
 
-    <main> 
+    <main>
         <!-- Your main content here -->
-        <div class = "cards-screen">
-            
-            <div class= "card">
-                <div>
-                    <img class="card-pic" src="assets/img/playlist.png">
-                </div>
-                <div class = "card-text">
-                    <h3>Playlist Title</h3>
-                    <p>Creator Name</p>
-                </div>
-            </div>
-
-            <div class= "card">
-                <div>
-                    <img class="card-pic" src="assets/img/playlist.png">
-                </div>
-                <div class = "card-text">
-                    <h3>Playlist Title</h3>
-                    <p>Creator Name</p>
-                </div>
-            </div>
-
-            <div class= "card">
-                <div>
-                    <img class="card-pic" src="assets/img/playlist.png">
-                </div>
-                <div class = "card-text">
-                    <h3>Playlist Title</h3>
-                    <p>Creator Name</p>
-                </div>
-            </div>
-
-            <div class= "card">
-                <div>
-                    <img class="card-pic" src="assets/img/playlist.png">
-                </div>
-                <div class = "card-text">
-                    <h3>Playlist Title</h3>
-                    <p>Creator Name</p>
-                </div>
-            </div>
-
-            <div class= "card">
-                <div>
-                    <img class="card-pic" src="assets/img/playlist.png">
-                </div>
-                <div class = "card-text">
-                    <h3>Playlist Title</h3>
-                    <p>Creator Name</p>
-                </div>
-            </div>
-
-            <div class= "card">
-                <div>
-                    <img class="card-pic" src="assets/img/playlist.png">
-                </div>
-                <div class = "card-text">
-                    <h3>Playlist Title</h3>
-                    <p>Creator Name</p>
-                </div>
-            </div>
-
-            <div class= "card">
-                <div>
-                    <img class="card-pic" src="assets/img/playlist.png">
-                </div>
-                <div class = "card-text">
-                    <h3>Playlist Title</h3>
-                    <p>Creator Name</p>
-                </div>
-            </div>
-
-            <div class= "card">
-                <div>
-                    <img class="card-pic" src="assets/img/playlist.png">
-                </div>
-                <div class = "card-text">
-                    <h3>Playlist Title</h3>
-                    <p>Creator Name</p>
-                </div>
-            </div>
-            
+        <div class = "cards-screen" id = "cards-screen">
         </div>
     </main>
 
+    <div id="playlistModal" class="modal">
+        <div class="modalcontent">
+            <div class="modalhead">
+                <span class="modalpic">
+                    <img class="card-pic" src="assets/img/playlist.png">
+                </span>
+                <span class="modaltitle">
+                    <div id="song-title"><h4>Playlist Title</h4></div>
+                    <div id="artiste">Creator Name</div>
+                </span>
+            </div>
+            <div class="modalsong">
+                <span class="songpic">
+                    <img class="song-pic" src="assets/img/playlist.png">
+                </span>
+                <span class="songtitle">
+                    <div id="song-title"><h2>Song Title</h2></div>
+                    <div id="artiste">Creator Name</div>
+                    <div id="album">Album Name</div>
+                </span>
+            </div>
+        </div>
+    </div>
     <footer>
-        <!-- Your footer content here -->
+
     </footer>
     <script src="data/data.js"></script>
-    <script src="script.js"></script>
+    <script type="module"  src="script.js"></script>
 </body>
 </html>

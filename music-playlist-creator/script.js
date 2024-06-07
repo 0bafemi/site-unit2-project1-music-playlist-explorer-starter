@@ -75,6 +75,7 @@ function loadModalOverlay(playlist){ // playlist contains the specific playlist 
             </span>
             <span  class="quit">&times;</span>
         </div>
+        <button id="shuffle-button">Shuffle <i class="fa-solid fa-shuffle"></i></button>
     `;
     // Time to work on the songs
     let modalContent = document.getElementsByClassName('modalcontent')[0];
@@ -109,8 +110,21 @@ function loadModalOverlay(playlist){ // playlist contains the specific playlist 
             document.getElementsByClassName('modal')[0].style.display = 'none';
         }
         });
+
+    const shuffleButton = document.getElementById('shuffle-button');
+    shuffleButton.addEventListener('click', () => {
+        shuffleSongs(playlist);
+    });
 }
 
+function shuffleSongs(playlist) {
+    for (let i = playlist.songs.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [playlist.songs[i], playlist.songs[j]] = [playlist.songs[j], playlist.songs[i]];
+    }
+
+    loadModalOverlay(playlist);
+  }
 
 loadplaylists();
 var cardElements = document.getElementsByClassName("playlist-cards");

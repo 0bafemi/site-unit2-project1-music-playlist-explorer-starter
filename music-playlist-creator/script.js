@@ -17,7 +17,7 @@ function loadplaylists(filter="") {
                     <h3 id="playlist-title">${card.playlist_name}</h3>
                     <p id="Creator">${card.playlist_creator}</p>
                     <span id=heart-${card.playlistID}>
-                        <i class="fa-regular fa-heart"></i>
+                        <i class="fa-regular fa-heart" style="color: #63E6BE;"> </i>
                     <span>
                     <span id=likecount-${card.playlistID}>
                         ${card.likeCount}
@@ -72,10 +72,11 @@ function loadModalOverlay(playlist){ // playlist contains the specific playlist 
             <span class="modaltitle">
                 <div id="song-title"><h1>${playlist.playlist_name}</h1></div>
                 <div id="artiste">${playlist.playlist_creator}</div>
+                <button id="shuffle-button">Shuffle <i class="fa-solid fa-shuffle" style="color: #000000;"></i></button>
             </span>
             <span  class="quit">&times;</span>
         </div>
-        <button id="shuffle-button">Shuffle <i class="fa-solid fa-shuffle"></i></button>
+
     `;
     // Time to work on the songs
     let modalContent = document.getElementsByClassName('modalcontent')[0];

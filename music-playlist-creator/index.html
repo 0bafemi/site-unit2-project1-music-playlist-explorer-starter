@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <style>
+        .modalsong {
+            border-bottom: 1px solid #FFFFFF;
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Circular&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,17 +17,27 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <!-- Your header content here -->
         <div class="head-container">
-                <p>Music Playlist Explorer <input  type="text" id="search" placeholder="Search Playlists..."></p>
+            <div class="logo">
+                <div><i class="fa-brands fa-spotify fa-7x" style="color:  #ffffff;"></i></div>
+                <div class="word-logo">Spotify Lite</div>
+            </div>
+            <div class="search">
+                <input type="text" id="search" placeholder="Search Playlists...">
+            </div>
         </div>
     </header>
 
     <main>
+        <a href="feature.html">
+            <button class="featured">Featured Playlist</button>
+        </a>
         <!-- Your main content here -->
-        <div class = "cards-screen" id = "cards-screen">
+        <div class="cards-screen" id="cards-screen">
         </div>
     </main>
 
@@ -30,6 +47,7 @@
 
     </footer>
     <script src="data/data.js"></script>
-    <script type="module"  src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
+
 </html>

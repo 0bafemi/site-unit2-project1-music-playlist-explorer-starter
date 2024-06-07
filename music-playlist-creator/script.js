@@ -1,9 +1,11 @@
 const playlistdata = data.playlists;
+let search = document.getElementById("search");
 
-function loadplaylists() {
-    let cards = document.getElementById("cards-screen");
-    for (let i = 0; i < playlistdata.length; i++) {
-        let card = playlistdata[i];
+function loadplaylists(filter="") {
+    let filter_result = playlistdata.filter(item => item['playlist_name'].toLowerCase().includes(filter.toLowerCase()) || item['playlist_creator'].toLowerCase().includes(filter.toLowerCase()))
+    document.getElementById('cards-screen').innerHTML='';
+    for (let i = 0; i < filter_result.length; i++) {
+        let card = filter_result[i];
 
         let playlistCardElement = document.createElement("div");
         playlistCardElement.className = "playlist-cards"
@@ -33,6 +35,8 @@ function loadplaylists() {
         const heartSpan = document.getElementById(`heart-${card.playlistID}`);
 
         like.addEventListener("click", function () {
+            event.stopPropagation();
+
             card.likeCount++;
             likeElement.innerText = card.likeCount;
 
@@ -52,6 +56,10 @@ function loadplaylists() {
     }
 }
 
+search.addEventListener('input', (event) => {
+    loadplaylists(event.target.value)
+})
+
 function loadModalOverlay(playlist){ // playlist contains the specific playlist object
     let modalOverlay = document.getElementsByClassName('modal')[0];
     console.log(modalOverlay);
@@ -65,7 +73,7 @@ function loadModalOverlay(playlist){ // playlist contains the specific playlist 
                 <div id="song-title"><h1>${playlist.playlist_name}</h1></div>
                 <div id="artiste">${playlist.playlist_creator}</div>
             </span>
-            <span class="quit">&times;</span>
+            <span  class="quit">&times;</span>
         </div>
     `;
     // Time to work on the songs
@@ -113,32 +121,3 @@ var cardElements = document.getElementsByClassName("playlist-cards");
             console.log(playlistData[i]);
         });
     }
-
-
-{/* <div class="modalcontent">
-    <div class="modalhead">
-        <span class="modalpic">
-            <img class="card-pic" src="assets/img/playlist.png">
-        </span>
-        <span class="modaltitle">
-            <div id="song-title"><h1>Playlist Title</h1></div>
-            <div id="artiste">Creator Name</div>
-        </span>
-        <span class="quit">&times;</span>
-    </div>
-
-    <div class="modalsong">
-        <span class="songpic">
-            <img class="song-pic" src="${song.cover_art}">
-        </span>
-        <span class="songtitle">
-            <div id="song-title"><h2>${song.title}</h2></div>
-            <div id="artiste">${song.artist}</div>
-            <div id="album">${song.album}</div>
-        </span>
-        <span class="duration">
-            <div id="artiste">${song.duration}</div>
-        </span>
-    </div>
-
-</div> */}

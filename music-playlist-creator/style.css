@@ -14,6 +14,10 @@ body {
     color:  #242424;
 }
 
+.search{
+
+}
+
 footer{
     background-color: #0f963e;
     bottom: 0;
@@ -29,14 +33,16 @@ footer{
     padding-top: 30px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: left;
+    justify-content: center;
+    gap: 4em;
 
 
 }
 
 .card{
     border: 2px solid #000000;
-    border-radius: 6px;
+    border-radius: 0px 0px 16px 16px;
     /* margin-right: 93px;*/
     margin-bottom: 20px;
     background-color: #0f963e;

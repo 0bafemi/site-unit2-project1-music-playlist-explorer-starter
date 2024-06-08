@@ -4,6 +4,9 @@ let search = document.getElementById("search");
 function loadplaylists(filter="") {
     let filter_result = playlistdata.filter(item => item['playlist_name'].toLowerCase().includes(filter.toLowerCase()) || item['playlist_creator'].toLowerCase().includes(filter.toLowerCase()))
     document.getElementById('cards-screen').innerHTML='';
+
+
+
     for (let i = 0; i < filter_result.length; i++) {
         let card = filter_result[i];
 
@@ -17,11 +20,12 @@ function loadplaylists(filter="") {
                     <h3 id="playlist-title">${card.playlist_name}</h3>
                     <p id="Creator">${card.playlist_creator}</p>
                     <span id=heart-${card.playlistID}>
-                        <i class="fa-regular fa-heart" style="color: #63E6BE;"> </i>
+                        <i class="fa-regular fa-heart" style="color: #63E6BE;"></i>
                     <span>
                     <span id=likecount-${card.playlistID}>
                         ${card.likeCount}
                     </span>
+                    <i class="fa-solid fa-trash-can delete-btn" data-id="${card.playlistID}"></i>
                 </div>
         `;
         playlistCardElement.classList.add("card");
@@ -31,10 +35,9 @@ function loadplaylists(filter="") {
 
         const likeElement = document.getElementById(`likecount-${card.playlistID}`);
 
-
         const heartSpan = document.getElementById(`heart-${card.playlistID}`);
 
-        like.addEventListener("click", function () {
+        like.addEventListener("click", function (event) {
             event.stopPropagation();
 
             card.likeCount++;
@@ -42,17 +45,30 @@ function loadplaylists(filter="") {
 
             if (card.likeCount === 1) {
                 card.likeCount -= 2;
-                // Select the <i> element within the clicked heart's parent span element
                 const heartElement = heartSpan.querySelector('i');
                 heartElement.classList.remove('fa-regular');
                 heartElement.classList.add('fa-solid');
             } else if (card.likeCount === 0) {
-                // Select the <i> element within the clicked heart's parent span element
                 const heartElement = heartSpan.querySelector('i');
                 heartElement.classList.remove('fa-solid');
                 heartElement.classList.add('fa-regular');
             }
         });
+
+        const deleteBtn = playlistCardElement.querySelector('.delete-btn');
+        deleteBtn.addEventListener('click', function(event) {
+            event.stopPropagation();
+            const playlistID = this.getAttribute('data-id');
+            deletePlaylist(playlistID);
+        });
+    }
+}
+
+function deletePlaylist(playlistID) {
+    const index = playlistdata.findIndex(playlist => playlist.playlistID == playlistID);
+    if (index !== -1) {
+        playlistdata.splice(index, 1);
+        loadplaylists();
     }
 }
 
@@ -60,7 +76,7 @@ search.addEventListener('input', (event) => {
     loadplaylists(event.target.value)
 })
 
-function loadModalOverlay(playlist){ // playlist contains the specific playlist object
+function loadModalOverlay(playlist){
     let modalOverlay = document.getElementsByClassName('modal')[0];
     console.log(modalOverlay);
     modalOverlay.innerHTML = `
@@ -76,9 +92,8 @@ function loadModalOverlay(playlist){ // playlist contains the specific playlist 
             </span>
             <span  class="quit">&times;</span>
         </div>
-
     `;
-    // Time to work on the songs
+
     let modalContent = document.getElementsByClassName('modalcontent')[0];
     for (let i=0; i < playlist.songs.length; i++){
         let song = playlist.songs[i];
@@ -102,7 +117,7 @@ function loadModalOverlay(playlist){ // playlist contains the specific playlist 
     </div>
     `;
     let closeButton = document.getElementsByClassName('quit')[0];
-    closeButton.addEventListener('click',  (event) => { // What does event do?
+    closeButton.addEventListener('click',  (event) => {
         document.getElementsByClassName('modal')[0].style.display = 'none';
     });
 
@@ -110,7 +125,7 @@ function loadModalOverlay(playlist){ // playlist contains the specific playlist 
         if (event.target === modalOverlay){
             document.getElementsByClassName('modal')[0].style.display = 'none';
         }
-        });
+    });
 
     const shuffleButton = document.getElementById('shuffle-button');
     shuffleButton.addEventListener('click', () => {
@@ -123,16 +138,15 @@ function shuffleSongs(playlist) {
       const j = Math.floor(Math.random() * (i + 1));
       [playlist.songs[i], playlist.songs[j]] = [playlist.songs[j], playlist.songs[i]];
     }
-
     loadModalOverlay(playlist);
-  }
+}
 
 loadplaylists();
 var cardElements = document.getElementsByClassName("playlist-cards");
-    for (let i = 0; i < cardElements.length; i ++) {
-        cardElements[i].addEventListener('click',  (event) => { // What does event do?
-            loadModalOverlay(playlistdata[i]);
-            document.getElementsByClassName('modal')[0].style.display = 'block';
-            console.log(playlistData[i]);
-        });
-    }
+for (let i = 0; i < cardElements.length; i ++) {
+    cardElements[i].addEventListener('click',  (event) => {
+        loadModalOverlay(playlistdata[i]);
+        document.getElementsByClassName('modal')[0].style.display = 'block';
+        console.log(playlistData[i]);
+    });
+}

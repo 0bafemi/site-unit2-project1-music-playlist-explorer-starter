@@ -5,7 +5,7 @@ function loadFeature(playlist) {
   console.log(modal);
   console.log("hello")
   modal.innerHTML = `
-  <div class="featurecontent">
+  <div class="modalcontent">
                 <div class="modalhead">
                     <span class="modalpic">
                         <img class="card-pic" src="${playlist.playlist_art}">
@@ -14,7 +14,6 @@ function loadFeature(playlist) {
                     </span>
                 </div>
                 <div class="songs">
-
                 </div>
             </div>
   `

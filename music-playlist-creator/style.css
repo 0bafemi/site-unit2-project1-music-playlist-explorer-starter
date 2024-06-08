@@ -246,3 +246,70 @@ footer{
  .songs{width: 60%;
 
 }
+
+
+.delete-btn {
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.delete-btn:hover {
+    background-color: #0f963e; /* Darker red on hover */
+}
+
+* Add new playlist card styling */
+.add-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    background-color: #333;
+    color: #63E6BE;
+    font-size: 3em;
+    cursor: pointer;
+    border: 2px dashed #63E6BE;
+    margin-bottom: 20px;
+}
+
+.add-card:hover {
+    background-color: #444;
+}
+
+/* Styling for the create playlist form modal */
+#newPlaylistModal .modalcontent {
+    background-color: #181818;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 6px;
+    width: 50%;
+    color: white;
+}
+
+#newPlaylistModal .modalcontent label,
+#newPlaylistModal .modalcontent input {
+    display: block;
+    margin: 10px 0;
+}
+
+#newPlaylistModal .modalcontent button {
+    background-color: #0f963e;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}

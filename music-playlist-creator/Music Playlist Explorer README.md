@@ -55,20 +55,19 @@ Deployed Application (optional): [Music Playlist Explorer Deployed Site](ADD_LIN
 `TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video actually renders and is playable when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
 
 <div style="position: relative; padding-bottom: 52.5%; height: 0;"><iframe src="https://www.loom.com/embed/5ca10641ef2444a983712b02bf2decbd?sid=7ec94c99-870f-483b-875f-471f0e8f1eb0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+Yes they did especially lab 4 and the use of js to create elements
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+Added way more cool features
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+my project demo went really well, I saw someone who was able to implement most of their features i'll make sure to do that next week too
 
 ### Open-source libraries used
 

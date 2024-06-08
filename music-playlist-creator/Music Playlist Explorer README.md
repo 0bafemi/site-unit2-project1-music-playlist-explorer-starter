@@ -52,9 +52,17 @@ Deployed Application (optional): [Music Playlist Explorer Deployed Site](ADD_LIN
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video actually renders and is playable when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
 
-<div style="position: relative; padding-bottom: 52.5%; height: 0;"><iframe src="https://www.loom.com/embed/5ca10641ef2444a983712b02bf2decbd?sid=7ec94c99-870f-483b-875f-471f0e8f1eb0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div>
+    <a href="https://www.loom.com/share/5ca10641ef2444a983712b02bf2decbd">
+      <p>Building a Music Playlist Application 🎵 - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/5ca10641ef2444a983712b02bf2decbd">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/5ca10641ef2444a983712b02bf2decbd-1717813817673-with-play.gif">
+    </a>
+  </div>
+
+
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
